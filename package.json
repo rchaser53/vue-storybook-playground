@@ -1,0 +1,30 @@
+{
+  "name": "vue-storybook-playground",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "storybook": "start-storybook -p 21000 -c .storybook"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rchaser53/vue-storybook-playground.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rchaser53/vue-storybook-playground/issues"
+  },
+  "homepage": "https://github.com/rchaser53/vue-storybook-playground#readme",
+  "devDependencies": {
+    "@storybook/cli": "^3.2.15",
+    "typescript": "^2.6.1",
+    "vue-loader": "^13.5.0"
+  },
+  "dependencies": {
+    "@storybook/vue": "^3.2.15",
+    "vue": "^2.5.3",
+    "vue-template-compiler": "^2.5.3"
+  }
+}
