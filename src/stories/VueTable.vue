@@ -2,10 +2,11 @@
   <div>
     <vuetable ref="vuetable"
       api-url="https://vuetable.ratiw.net/api/users"
-      :fields="fields"
-      pagination-path=""
+      :fields="fields" pagination-path=""
       @vuetable:pagination-data="onPaginationData"
-    ></vuetable>
+    >
+    <!-- :muti-sort="true"  multi-sort-key="ctrl"  ##doen't work## -->
+    </vuetable>
     <vuetable-pagination ref="pagination"
       @vuetable-pagination:change-page="onChangePage"
     ></vuetable-pagination>
@@ -20,7 +21,15 @@ export default {
   data: function() {
     return {
       fields: [
-        'name', 'email'
+        {
+          name: 'name',
+          sortField: 'name',
+        }, {
+          name: 'email',
+          sortField: 'email',
+          // direction: 'asc',      // doesn't work
+          callback: 'nyan'
+        }
       ]
     }
   },
@@ -34,6 +43,10 @@ export default {
     },
     onChangePage (page) {
       this.$refs.vuetable.changePage(page)
+    },
+    nyan(e) {
+      // return value is the value in table
+      return e;
     }
   }
 }
