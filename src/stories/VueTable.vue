@@ -1,10 +1,10 @@
 <template>
   <div>
     <vuetable ref="vuetable"
-      api-url="https://vuetable.ratiw.net/api/users"
+      :data="hogeData" :apiMode="false"
       :fields="fields" pagination-path=""
-      @vuetable:pagination-data="onPaginationData"
-    >
+      @vuetable:pagination-data="onPaginationData">
+    <!-- api-url="https://vuetable.ratiw.net/api/users"   -->
     <!-- :muti-sort="true"  multi-sort-key="ctrl"  ##doen't work## -->
     </vuetable>
     <vuetable-pagination ref="pagination"
@@ -14,13 +14,25 @@
 </template>
 
 <script>
-import {Vuetable, VuetablePagination} from 'vuetable-2'
+// import {Vuetable, VuetablePagination} from 'vuetable-2'
+import {VuetablePagination} from 'vuetable-2'
+import Vuetable from 'vuetable-2/src/components/Vuetable.vue'
 
 export default {
   name: 'vue-table',
   data: function() {
     return {
+      hogeData: [
+        {
+          name: 111,
+          email: 222
+        }
+      ],
       fields: [
+        {
+          name: '__handle',   // only show the icon?
+          dataClass: 'center aligned'
+        },
         {
           name: 'name',
           sortField: 'name',
@@ -53,6 +65,17 @@ export default {
 </script>
 
 <style>
+  .vuetable-handle {
+    width: 30px;
+  }
+
+  .handle-icon {
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-color: green;
+  }
+
   .pagination a.item {
     background-color: aqua;
     display: inline-block;
