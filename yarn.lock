@@ -444,6 +444,12 @@ aws4@^1.2.1, aws4@^1.6.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.6.0.tgz#83ef5ca860b2b32e4a0deedee8c771b9db57471e"
 
+axios@^0.15.3:
+  version "0.15.3"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.15.3.tgz#2c9d638b2e191a08ea1d6cc988eadd6ba5bdc053"
+  dependencies:
+    follow-redirects "1.0.0"
+
 babel-code-frame@^6.11.0, babel-code-frame@^6.26.0:
   version "6.26.0"
   resolved "https://registry.yarnpkg.com/babel-code-frame/-/babel-code-frame-6.26.0.tgz#63fd43f7dc1e3bb7ce35947db8fe369a3f58c74b"
@@ -1305,7 +1311,7 @@ babel-preset-env@1.6.1, babel-preset-env@^1.6.0:
     invariant "^2.2.2"
     semver "^5.3.0"
 
-babel-preset-es2015@^6.9.0:
+babel-preset-es2015@^6.24.1, babel-preset-es2015@^6.9.0:
   version "6.24.1"
   resolved "https://registry.yarnpkg.com/babel-preset-es2015/-/babel-preset-es2015-6.24.1.tgz#d44050d6bc2c9feea702aaf38d727a0210538939"
   dependencies:
@@ -2705,6 +2711,12 @@ flatten@^1.0.2:
 flow-parser@^0.*:
   version "0.59.0"
   resolved "https://registry.yarnpkg.com/flow-parser/-/flow-parser-0.59.0.tgz#f6ebcae61ffa187e420999d40ce0a801f39b2635"
+
+follow-redirects@1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.0.0.tgz#8e34298cbd2e176f254effec75a1c78cc849fd37"
+  dependencies:
+    debug "^2.2.0"
 
 for-in@^1.0.1:
   version "1.0.2"
@@ -5794,6 +5806,12 @@ vue-template-es2015-compiler@^1.6.0:
 vue@^2.5.3:
   version "2.5.3"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.5.3.tgz#e1a3b1f49b6e93e574ce040b95cbc873912fecc1"
+
+vuetable-2@^1.7.0:
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/vuetable-2/-/vuetable-2-1.7.0.tgz#7bd4268aa937b98884ab3250d7cbf20c4b3d539c"
+  dependencies:
+    axios "^0.15.3"
 
 warning@^3.0.0:
   version "3.0.0"
