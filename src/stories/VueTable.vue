@@ -1,10 +1,12 @@
 <template>
   <div>
     <vuetable ref="vuetable"
-      :data="hogeData" :apiMode="false"
-      :fields="fields" pagination-path=""
+      api-url="https://vuetable.ratiw.net/api/users"  
+      :fields="fields" pagination-path="" track-by="name"
+      detail-row-component="my-detail-row"
+      @vuetable:cell-clicked="onCellClicked"
       @vuetable:pagination-data="onPaginationData">
-    <!-- api-url="https://vuetable.ratiw.net/api/users"   -->
+
     <!-- :muti-sort="true"  multi-sort-key="ctrl"  ##doen't work## -->
     </vuetable>
     <vuetable-pagination ref="pagination"
@@ -15,8 +17,12 @@
 
 <script>
 // import {Vuetable, VuetablePagination} from 'vuetable-2'
+import Vue from 'vue'
 import {VuetablePagination} from 'vuetable-2'
 import Vuetable from 'vuetable-2/src/components/Vuetable.vue'
+import DetailRow from './VueTableDetailRow.vue'
+
+Vue.component('my-detail-row', DetailRow)
 
 export default {
   name: 'vue-table',
@@ -47,6 +53,7 @@ export default {
   },
   components: {
     Vuetable,
+    DetailRow,
     VuetablePagination
   },
   methods: {
@@ -59,6 +66,10 @@ export default {
     nyan(e) {
       // return value is the value in table
       return e;
+    },
+    onCellClicked (data, field, event) {
+      console.log('cellClicked: ', field.name, data.id)
+      this.$refs.vuetable.toggleDetailRow(data.id)
     }
   }
 }
