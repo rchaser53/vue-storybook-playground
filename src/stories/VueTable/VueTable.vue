@@ -1,17 +1,16 @@
 <template>
   <div>
+    <filter-bar />
     <vuetable ref="vuetable"
       api-url="https://vuetable.ratiw.net/api/users"  
       :fields="fields" pagination-path="" track-by="name"
       detail-row-component="my-detail-row"
       @vuetable:cell-clicked="onCellClicked"
-      @vuetable:pagination-data="onPaginationData">
+      @vuetable:pagination-data="onPaginationData" />
 
     <!-- :muti-sort="true"  multi-sort-key="ctrl"  ##doen't work## -->
-    </vuetable>
     <vuetable-pagination ref="pagination"
-      @vuetable-pagination:change-page="onChangePage"
-    ></vuetable-pagination>
+      @vuetable-pagination:change-page="onChangePage" />
   </div>
 </template>
 
@@ -21,11 +20,19 @@ import Vue from 'vue'
 import {VuetablePagination} from 'vuetable-2'
 import Vuetable from 'vuetable-2/src/components/Vuetable.vue'
 import DetailRow from './VueTableDetailRow.vue'
+import FilterBar from './FilterBar.vue'
 
+Vue.component('filter-bar', FilterBar)
 Vue.component('my-detail-row', DetailRow)
 
+console.log(1234)
+
 export default {
-  name: 'vue-table',
+  // name: 'vue-table',
+  mounted () {
+    this.$on('filter-set', eventData => this.onFilterSet(eventData))
+    this.$on('filter-reset', e => this.onFilterReset())
+  },
   data: function() {
     return {
       hogeData: [
@@ -53,7 +60,6 @@ export default {
   },
   components: {
     Vuetable,
-    DetailRow,
     VuetablePagination
   },
   methods: {
@@ -62,6 +68,14 @@ export default {
     },
     onChangePage (page) {
       this.$refs.vuetable.changePage(page)
+    },
+    onFilterSet (filterText) {
+      this.moreParams.filter = filterText
+      Vue.nextTick( () => this.$refs.vuetable.refresh() )
+    },
+    onFilterReset () {
+      delete this.moreParams.filter
+      Vue.nextTick( () => this.$refs.vuetable.refresh() )
     },
     nyan(e) {
       // return value is the value in table

@@ -2,7 +2,7 @@ import Vue from 'vue';
 
 import { storiesOf } from '@storybook/vue';
 import MyButton from './Button.vue';
-import VueTable from './VueTable.vue';
+import VueTable from './VueTable/VueTable.vue';
 
 storiesOf('MyButton', module)
   .add('story as a component', () => ({
