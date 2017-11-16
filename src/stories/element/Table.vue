@@ -1,11 +1,14 @@
 <template>
   <div>
+    <!-- <input @change="changeFilter" > -->
+
     <el-table :data="tableData" :default-sort="{prop: 'date', order: 'descending'}" style="width: 100%">
-      <el-table-column prop="date" label="Date" sortable width="180">
+      <el-table-column class-name="filter-column" prop="date" label="Date" sortable>
       </el-table-column>
-      <el-table-column prop="name" label="Name" width="180">
+      <el-table-column prop="name" label="Name" :filters="[{ text: 'Home', value: 'hoge2' }, { text: 'Office', value: 'Office' }]"
+        :filter-method="filterTag" filter-placement="bottom-end">
       </el-table-column>
-      <el-table-column prop="address" label="Address" :formatter="formatter">
+      <el-table-column prop="address" label="Address" >
       </el-table-column>
     </el-table>
   </div>
@@ -13,8 +16,7 @@
 
 <script>
   import Vue from 'vue'
-  import { ElTable } from 'element-table'
-  import { ElTableColumn } from 'element-table'
+  import { ElTable, ElTableColumn } from 'element-table'
 
   export default {
     data: function() {
@@ -42,6 +44,19 @@
       'el-table': ElTable,
       'el-table-column': ElTableColumn
     },
-    name: 'element-table'
+    name: 'element-table',
+    methods: {
+
+      filterTag(value, row) {
+        console.log(value, row, 288)
+        return row.name === value;
+      }
+    }
   }
 </script>
+
+<style>
+  th.filter-column {
+    background-color: aqua;
+  }
+</style>

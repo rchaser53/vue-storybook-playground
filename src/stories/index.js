@@ -1,13 +1,13 @@
 import Vue from 'vue';
 
 import { storiesOf } from '@storybook/vue';
-import MyButtons from './Button.vue';
+import MyButton from './Button.vue';
 import VueTable from './VueTable/VueTable.vue';
 import ElementTable from './element/Table.vue';
 
 storiesOf('MyButton', module)
   .add('story as a component', () => ({
-    components: { MyButtons },
+    components: { MyButton },
     template: '<my-button :rounded="true">rounded</my-button>'
   }))
   .add('vue-table2', () => ({

@@ -1,1 +1,16 @@
-{ "presets": ["es2015"] }
+{
+  "presets": ["es2015"],
+  "plugins": ["transform-vue-jsx"],
+  "env": {
+    "utils": {
+      "plugins": [
+        ["module-resolver", {
+          "root": ["element-ui"],
+          "alias": {
+            "element-ui/src": "element-ui/lib"
+          }
+        }]
+      ]
+    }
+  }
+}

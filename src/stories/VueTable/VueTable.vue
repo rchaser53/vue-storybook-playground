@@ -25,8 +25,6 @@ import FilterBar from './FilterBar.vue'
 Vue.component('filter-bar', FilterBar)
 Vue.component('my-detail-row', DetailRow)
 
-console.log(1234)
-
 export default {
   // name: 'vue-table',
   mounted () {
