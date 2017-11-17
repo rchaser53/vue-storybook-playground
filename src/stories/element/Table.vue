@@ -17,6 +17,7 @@
 <script>
   import Vue from 'vue'
   import { ElTable, ElTableColumn } from 'element-table'
+  import 'element-theme-chalk/lib/table.css'
 
   export default {
     data: function() {

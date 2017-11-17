@@ -4,6 +4,7 @@ import { storiesOf } from '@storybook/vue';
 import MyButton from './Button.vue';
 import VueTable from './VueTable/VueTable.vue';
 import ElementTable from './element/Table.vue';
+import ElementPagination from './element/Pagination.vue';
 
 storiesOf('MyButton', module)
   .add('story as a component', () => ({
@@ -12,9 +13,13 @@ storiesOf('MyButton', module)
   }))
   .add('vue-table2', () => ({
     components: { VueTable },
-    template: '<vue-table :rounded="true">rounded</vue-table>'
+    template: '<vue-table></vue-table>'
   }))
   .add('element vue table', () => ({
     components: { ElementTable },
-    template: '<element-table ></element-table>'
+    template: '<element-table></element-table>'
+  }))
+  .add('element pagination', () => ({
+    components: { ElementPagination },
+    template: '<element-pagination></element-pagination>'
   }));
