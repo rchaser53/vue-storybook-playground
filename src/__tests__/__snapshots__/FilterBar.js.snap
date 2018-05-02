@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FilterBarをrenderする 1`] = `
+<div
+  class="filter-bar ui basic segment grid"
+>
+  <div
+    class="ui form"
+  >
+    <div
+      class="inline field"
+    >
+      <label>
+        Search for:
+      </label>
+       
+      <input
+        class="three wide column"
+        placeholder="name, nickname, or email"
+        type="text"
+      />
+       
+      <button
+        class="ui primary button"
+      >
+        Go
+      </button>
+       
+      <button
+        class="ui button"
+      >
+        Reset
+      </button>
+    </div>
+  </div>
+</div>
+`;
