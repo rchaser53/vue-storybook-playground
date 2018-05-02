@@ -11,21 +11,20 @@
   </div>
 </template>
 
-<script>
-export default {
-  data () {
-    return {
-      filterText: ''
-    }
-  },
-  methods: {
-    doFilter () {
-      this.$events.fire('filter-set', this.filterText)
-    },
-    resetFilter () {
-      this.filterText = ''
-      this.$events.fire('filter-reset')
-    }
+<script lang="ts">
+import Vue from 'vue'
+import Component from 'vue-class-component'
+
+@Component
+export default class FilterBar extends Vue {
+  filterText = ''
+
+  doFilter () {
+    (this as any).$events.fire('filter-set', this.filterText)
+  }
+  resetFilter () {
+    this.filterText = '';
+    (this as any).$events.fire('filter-reset')
   }
 }
 </script>

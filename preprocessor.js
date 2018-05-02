@@ -6,7 +6,7 @@ module.exports = {
     if (path.endsWith('.ts')) {
       const optionForJest = {
         ...tsConfig.compilerOptions,
-        // module: 'commonjs',
+        module: 'commonjs',
       };
 
       return tsc.transpile(src, optionForJest, path, []);

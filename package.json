@@ -44,6 +44,7 @@
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "vue": "^2.5.16",
+    "vue-class-component": "^6.2.0",
     "vue-template-compiler": "^2.5.16",
     "vuetable-2": "^1.7.0"
   }
