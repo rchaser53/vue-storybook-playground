@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import FilterBar from '../stories/VueTable/FilterBar.vue';
+import VueTable from '../stories/VueTable/VueTable.vue';
 import { createRenderer } from 'vue-server-renderer';
 const renderer = createRenderer();
 
@@ -14,14 +14,14 @@ const render = (vm) => {
   });
 };
 
-test('FilterBarをrenderする', () => {
+test('VueTableをrenderする', () => {
   const vm = new Vue({
   	el: document.createElement('div'),
   	components: {
-  		'filter-bar': FilterBar,
+  		'vue-table': VueTable,
   	},
   	render: (h) => {
-  		return h('filter-bar');
+  		return h('vue-table');
   	},
   });
   expect(vm.$el).toMatchSnapshot();

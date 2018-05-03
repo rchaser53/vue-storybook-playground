@@ -15,10 +15,8 @@
 </template>
 
 <script>
-// import {Vuetable, VuetablePagination} from 'vuetable-2'
 import Vue from 'vue'
-import {VuetablePagination} from 'vuetable-2'
-import Vuetable from 'vuetable-2/src/components/Vuetable.vue'
+import { Vuetable, VuetablePagination } from 'vuetable-2'
 import DetailRow from './VueTableDetailRow.vue'
 import FilterBar from './FilterBar.vue'
 

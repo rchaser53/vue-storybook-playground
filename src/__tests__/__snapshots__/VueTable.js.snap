@@ -1,0 +1,108 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`VueTableをrenderする 1`] = `
+<div>
+  <div
+    class="filter-bar ui basic segment grid"
+  >
+    <div
+      class="ui form"
+    >
+      <div
+        class="inline field"
+      >
+        <label>
+          Search for:
+        </label>
+         
+        <input
+          class="three wide column"
+          placeholder="name, nickname, or email"
+          type="text"
+        />
+         
+        <button
+          class="ui primary button"
+        >
+          Go
+        </button>
+         
+        <button
+          class="ui button"
+        >
+          Reset
+        </button>
+      </div>
+    </div>
+  </div>
+   
+  <table
+    class="vuetable ui blue selectable celled stackable attached table"
+    data-v-5cc42bfc=""
+  >
+    <thead
+      data-v-5cc42bfc=""
+    >
+      <tr
+        data-v-5cc42bfc=""
+      />
+    </thead>
+     
+    <tbody
+      class="vuetable-body"
+      data-v-5cc42bfc=""
+    >
+       
+      <tr
+        data-v-5cc42bfc=""
+      >
+        <td
+          class="vuetable-empty-result"
+          colspan="0"
+          data-v-5cc42bfc=""
+        >
+          No Data Available
+        </td>
+      </tr>
+       
+    </tbody>
+  </table>
+   
+  <div
+    class="ui right floated pagination menu"
+    style="display: none;"
+  >
+    <a
+      class="btn-nav icon item"
+    >
+      <i
+        class="angle double left icon"
+      />
+    </a>
+     
+    <a
+      class="btn-nav icon item"
+    >
+      <i
+        class="left chevron icon"
+      />
+    </a>
+      
+    <a
+      class="btn-nav icon item"
+    >
+      <i
+        class="right chevron icon"
+      />
+    </a>
+     
+    <a
+      class="btn-nav icon item"
+    >
+      <i
+        class="angle double right icon"
+      />
+    </a>
+  </div>
+</div>
+`;
